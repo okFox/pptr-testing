@@ -9,11 +9,11 @@ describe('My first puppeteer test', () => {
 
     const page = await (await browser).newPage();
     await page.goto('http://www.example.com/');
-    await page.waitFor(3000);
     await page.waitForSelector('h1');
-    await page.reload();
-    await page.waitFor(3000);
-    await page.waitForSelector('h1');
+    await page.goto('https://en.wikipedia.org/wiki/Portland,_Oregon');
+    await page.waitForSelector('.mw-body');
+    await page.goBack('h1');
+    await page.goForward('#mw-body');
     await (await browser).close();
   });
 })
