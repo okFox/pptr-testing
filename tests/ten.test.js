@@ -1,9 +1,9 @@
 const puppeteer = require('puppeteer');
 
 describe('My first puppeteer test', () => {
-  it('should launch the browser', async function() {
+  it('should launch the browser and go forward and backward successfully', async function() {
     const browser = puppeteer.launch({ 
-      headless: false, 
+      headless: true, 
       slowMo: 50, 
       devtools: false });
 
